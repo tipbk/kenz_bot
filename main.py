@@ -3,6 +3,7 @@ import os
 import requests
 import random
 import json
+from keep_alive import keep_alive
 
 response = requests.get("http://antiverse.trueddns.com:18527/")
 client = discord.Client()
@@ -21,7 +22,7 @@ def getSomePic():
 
 @client.event
 async def on_ready():
-  print("Hello")
+  print("KenZ is ready to serve!!!")
 
 @client.event
 async def on_message(message):
@@ -47,5 +48,5 @@ async def on_message(message):
       await message.channel.send(getSomePic())
 
 
-
+keep_alive()
 client.run(os.getenv('TOKEN'))
