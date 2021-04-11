@@ -31,7 +31,8 @@ async def on_message(message):
     msg = message.content.split(' ')
     if len(msg) == 1:
       await message.channel.send("command = [?, hi, hello, ถาม, xenojam, xeno]")
-    command = msg[1]
+    else:
+      command = msg[1]
     if command == "hi" or command == "hello":
       ans = random.choice(คำทักทาย)
       await message.channel.send(ans)
