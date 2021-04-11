@@ -2,14 +2,22 @@ import discord
 import os
 import requests
 import random
-
+import json
 
 response = requests.get("http://antiverse.trueddns.com:18527/")
 client = discord.Client()
 
+
 คำทักทาย = ["bobo","ว่าไง","ว่า","เออ หวัดดี","หะ","."]
 เซิฟอยู่ = ["เข้าได้อยู่","ยังไม่บึ้ม","เล่นได้ ก็ออนไลน์อยู่","xenojam is still alive kuy"]
 เซิฟบึ้ม = ["ไอเหี้ย พัง","ทรูกาก","เซิฟบึ้ม","เลิกทำแล้ว","xenojam is ded"]
+
+#Random picture feature
+def getSomePic():
+  link = "https://picsum.photos/id/" + str(random.randint(0,1084)) + "/info"
+  req = requests.get(link)
+  img = json.loads(req.text)
+  return img["download_url"]
 
 @client.event
 async def on_ready():
@@ -19,8 +27,10 @@ async def on_ready():
 async def on_message(message):
   if message.author == client.user: 
     return
-  if message.content.startswith("$kenz"):
+  if message.content.startswith("!kenz"):
     msg = message.content.split(' ')
+    if len(msg) == 1:
+      await message.channel.send("command = [?, hi, hello, ถาม, xenojam, xeno]")
     command = msg[1]
     if command == "hi" or command == "hello":
       ans = random.choice(คำทักทาย)
@@ -32,5 +42,9 @@ async def on_message(message):
         await message.channel.send(random.choice(เซิฟอยู่))
       else:
         await message.channel.send(random.choice(เซิฟบึ้ม))
+    elif command == "?":
+      await message.channel.send(getSomePic())
+
+
 
 client.run(os.getenv('TOKEN'))
