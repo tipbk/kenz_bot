@@ -7,6 +7,7 @@ from Feature.feature_random_photo import random_photo
 from Feature.feature_fword import fword
 from Feature.feature_roll import roll
 from Feature.feature_show_command import show_command
+from Feature.feature_get_crypto_data import get_crypto_data
 
 client = discord.Client()
 
@@ -40,6 +41,11 @@ async def on_message(message):
         await message.channel.send(fword())
       else:
         await message.channel.send(msg[2] + " " + fword())
+    elif command == "price":
+      if len(msg) == 2:
+        await message.channel.send("ใส่ชื่อเหรียญมาด้วยยย")
+      else:
+        await message.channel.send(get_crypto_data(msg[2]))
 
 
 keep_alive()
