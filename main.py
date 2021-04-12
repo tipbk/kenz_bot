@@ -52,6 +52,8 @@ async def on_message(message):
         await message.channel.send(random.choice(เซิฟบึ้ม))
     elif command == "?":
       await message.channel.send(getSomePic())
+    elif command == "roll":
+      await message.channel.send("ได้เลข " + str(random.randint(0,100))+ " จ่ะ")
 
 
 keep_alive()
