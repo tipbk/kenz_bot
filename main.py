@@ -8,7 +8,7 @@ from keep_alive import keep_alive
 response = requests.get("http://antiverse.trueddns.com:18527/")
 client = discord.Client()
 
-
+#List of words that we gonna use
 คำทักทาย = ["bobo","ว่าไง","ว่า","เออ หวัดดี","หะ","."]
 เซิฟอยู่ = ["เข้าได้อยู่","ยังไม่บึ้ม","เล่นได้ ก็ออนไลน์อยู่","xenojam is still alive kuy"]
 เซิฟบึ้ม = ["ไอเหี้ย พัง","ทรูกาก","เซิฟบึ้ม","เลิกทำแล้ว","xenojam is ded"]
@@ -31,7 +31,12 @@ async def on_message(message):
   if message.content.startswith("!kenz"):
     msg = message.content.split(' ')
     if len(msg) == 1:
-      await message.channel.send("command = [?, hi, hello, ถาม, xenojam, xeno]")
+      await message.channel.send('''Command List
+                                    ? = send a random picture
+                                    hi, hello = KenZ will reply you with random greeting words
+                                    ถาม = He will answer "ไม่รู้"
+                                    xenojam, xeno = to check xenojam server status (still in beta stage)
+                                    ''')
     else:
       command = msg[1]
     if command == "hi" or command == "hello":
