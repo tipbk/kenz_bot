@@ -5,7 +5,7 @@ import random
 import json
 from keep_alive import keep_alive
 
-response = requests.get("http://antiverse.trueddns.com:18527/")
+
 client = discord.Client()
 
 #List of words that we gonna use
@@ -32,10 +32,10 @@ async def on_message(message):
     msg = message.content.split(' ')
     if len(msg) == 1:
       await message.channel.send('''Command List
-                                    ? = send a random picture
-                                    hi, hello = KenZ will reply you with random greeting words
-                                    ถาม = He will answer "ไม่รู้"
-                                    xenojam, xeno = to check xenojam server status (still in beta stage)
+      ? = send a random picture
+      hi, hello = KenZ will reply you with random greeting words
+      ถาม = He will answer "ไม่รู้"
+      xenojam, xeno = to check xenojam server status (still in beta stage)
                                     ''')
     else:
       command = msg[1]
@@ -45,9 +45,10 @@ async def on_message(message):
     elif command == "ถาม":
       await message.channel.send("ไม่รู้")
     elif command.lower() == "xenojam" or command.lower() == "xeno":
-      if response.status_code == 200:
+      try:
+        requests.get("http://antiverse.trueddns.com:18527/")
         await message.channel.send(random.choice(เซิฟอยู่))
-      else:
+      except:
         await message.channel.send(random.choice(เซิฟบึ้ม))
     elif command == "?":
       await message.channel.send(getSomePic())
