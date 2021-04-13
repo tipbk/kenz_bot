@@ -39,11 +39,7 @@ async def on_message(message):
     elif command == "ด่า":
       await message.channel.send(fword(msg))
     elif command == "price":
-      if len(msg) == 2:
-        await message.channel.send("ใส่ชื่อเหรียญมาด้วยยย")
-      else:
-        await message.channel.send(get_crypto_data(msg[2]))
-
+      await message.channel.send(get_crypto_data(msg))
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
