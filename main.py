@@ -37,10 +37,7 @@ async def on_message(message):
     elif command == "roll":
       await message.channel.send(roll())
     elif command == "ด่า":
-      if len(msg) == 2:
-        await message.channel.send(fword())
-      else:
-        await message.channel.send(msg[2] + " " + fword())
+      await message.channel.send(fword(msg))
     elif command == "price":
       if len(msg) == 2:
         await message.channel.send("ใส่ชื่อเหรียญมาด้วยยย")
