@@ -38,7 +38,7 @@ async def on_message(message):
       await message.channel.send(roll())
     elif command == "ด่า":
       await message.channel.send(fword(msg))
-    elif command == "price":
+    elif command == "coin":
       await message.channel.send(get_crypto_data(msg))
 
 keep_alive()
