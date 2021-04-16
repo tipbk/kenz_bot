@@ -8,6 +8,7 @@ from Feature.feature_fword import fword
 from Feature.feature_roll import roll
 from Feature.feature_show_command import show_command
 from Feature.feature_get_crypto_data import get_crypto_data
+from Feature.feature_gacha import gacha
 
 client = discord.Client()
 
@@ -40,6 +41,8 @@ async def on_message(message):
       await message.channel.send(fword(msg))
     elif command == "coin":
       await message.channel.send(get_crypto_data(msg))
+    elif command == "gacha":
+      await message.channel.send(gacha(msg))
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
