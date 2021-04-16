@@ -9,6 +9,7 @@ from Feature.feature_roll import roll
 from Feature.feature_show_command import show_command
 from Feature.feature_get_crypto_data import get_crypto_data
 from Feature.feature_gacha import gacha
+from Feature.feature_ask import ask
 
 client = discord.Client()
 
@@ -30,7 +31,7 @@ async def on_message(message):
     if command == "hi" or command == "hello":
       await message.channel.send(greeting())
     elif command == "ถาม":
-      await message.channel.send("ไม่รู้")
+      await message.channel.send(ask())
     elif command.lower() == "xenojam" or command.lower() == "xeno" or command.lower() == "server":
       await message.channel.send(check_server_status())
     elif command == "?":
