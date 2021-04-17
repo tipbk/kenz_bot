@@ -7,5 +7,6 @@ def show_command():
           - roll = KenZ will roll a number from 0 - 100
           - xenojam, xeno, server = to check xenojam server status
           - ด่า <Person> = เคนด่า<Person>
-          - coin <coin_name> = show the current value of <coin_name> if no coin_name he will ask for it```
+          - coin <coin_name> = show the current value of <coin_name> if no coin_name he will ask for it
+          - gacha <percentage> = see you're lucky or got salt xD```
                                     '''
