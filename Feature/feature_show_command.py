@@ -7,6 +7,12 @@ def show_command():
           - roll = KenZ will roll a number from 0 - 100
           - xenojam, xeno, server = to check xenojam server status
           - ด่า <Person> = เคนด่า<Person>
-          - coin <coin_name> = show the current value of <coin_name> if no coin_name he will ask for it
-          - gacha <percentage> = see you're lucky or got salt xD```
+          - เพิ่มคำด่า <คำด่า> = add more f word
+          - ลบคำด่า <คำด่า> = delete f word
+          - คำด่า = f_word list
+          - ตู่ = send a random picture of Thai President
+          - เพิ่มรูปตู่ <url> = add more Thai President Photo
+          - ลบรูปตู่ <url> = remove Thai President Photo
+          - รูปตู่ = show all Thai President Photo in url
+          - coin <coin_name> = show the current value of <coin_name> if no coin_name he will ask for it```
                                     '''
