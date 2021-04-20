@@ -61,6 +61,8 @@ async def on_message(message):
       await message.channel.send(gacha(msg))
     elif command == "ระเบิดเวลา":
       await message.channel.send("อ๊าาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาา")
+    else:
+      await message.channel.send(command + " command not found")
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
