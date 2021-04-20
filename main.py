@@ -62,7 +62,7 @@ async def on_message(message):
     elif command == "ระเบิดเวลา":
       await message.channel.send("อ๊าาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาา")
     else:
-      await message.channel.send(command + " command not found")
+      await message.channel.send("'" + command + "' command not found")
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
